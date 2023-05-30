@@ -22,7 +22,7 @@
         tools:ignore="TextSizeCheck" />
 
     <EditText
-        android:id="@+id/editTextTextEmailAddress"
+        android:id="@+id/emailET"
         android:layout_width="240dp"
         android:layout_height="48dp"
         android:layout_marginTop="36dp"
@@ -40,7 +40,7 @@
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/editTextTextName"
+        android:id="@+id/nameET"
         android:layout_width="240dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
@@ -54,11 +54,11 @@
         android:textSize="12sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress"
+        app:layout_constraintTop_toBottomOf="@+id/emailET"
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/editTextTextPassword"
+        android:id="@+id/passET"
         android:layout_width="240dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
@@ -73,7 +73,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextName"
+        app:layout_constraintTop_toBottomOf="@+id/nameET"
         android:autofillHints="" />
 
     <Button
@@ -87,7 +87,7 @@
         android:textSize="14sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
+        app:layout_constraintTop_toBottomOf="@+id/passET"
         android:textAllCaps="false"/>
 
     <ImageView
@@ -119,7 +119,7 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/LoginTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="4dp"
