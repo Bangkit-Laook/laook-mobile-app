@@ -55,4 +55,5 @@ dependencies {
     implementation 'androidx.navigation:navigation-ui-ktx:2.5.3'
     implementation 'com.github.denzcoskun:ImageSlideShow:0.1.0'
 
+
 }

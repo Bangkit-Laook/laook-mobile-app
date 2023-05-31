@@ -1,5 +1,6 @@
 package com.example.laook.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,7 +10,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import com.denzcoskun.imageslider.ImageSlider
 import com.denzcoskun.imageslider.models.SlideModel
+import com.example.laook.MainActivity
+import com.example.laook.ProfileActivity
 import com.example.laook.R
+import com.example.laook.ScanActivity
 import com.example.laook.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
@@ -38,7 +42,13 @@ class HomeFragment : Fragment() {
         val sliderLayout = root.findViewById<ImageSlider>(R.id.sliderLayout)
         sliderLayout.setImageList(homeViewModel.imageList)
 
+        binding.profile.setOnClickListener{
+            startActivity(Intent(requireContext(), ProfileActivity::class.java))
+        }
+
         return root
+
+
     }
 
     override fun onDestroyView() {

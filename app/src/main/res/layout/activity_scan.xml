@@ -24,6 +24,7 @@
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_marginStart="25dp"
+            android:layout_gravity="start"
             android:contentDescription="@string/back_button"
             android:src="@drawable/ic_back" />
 
@@ -39,6 +40,16 @@
             android:textSize="18sp"
             tools:layout_editor_absoluteX="173dp"
             tools:layout_editor_absoluteY="16dp" />
+
+        <ImageView
+            android:id="@+id/btnInfo"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="25dp"
+            android:contentDescription="@string/btn_info"
+            android:src="@drawable/ic_info"
+            android:layout_gravity="end"
+            android:layout_marginEnd="25dp"/>
 
     </com.google.android.material.appbar.MaterialToolbar>
 
