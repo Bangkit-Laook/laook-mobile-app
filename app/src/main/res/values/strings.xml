@@ -16,7 +16,8 @@
     <string name="title_camera">Camera</string>
     <string name="title_favorite">Favorite</string>
     <string name="title_profile">Profile</string>
-
+    <string name="package_name">com.example.laook</string>
+    <string name="choose_picture">Choose a picture</string>
     <string name="fav_kosong">Favorit anda masih kosong</string>
     <string name="title_scan">Pindai bahan</string>
     <string name="back_button">back_button</string>

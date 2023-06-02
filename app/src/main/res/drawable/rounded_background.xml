@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Shape untuk bagian atas yang melengkung -->
+    <item>
+        <shape>
+            <solid android:color="@color/white" /> <!-- Warna latar belakang RelativeLayout -->
+            <corners android:topLeftRadius="25dp" android:topRightRadius="16dp" /> <!-- Sudut melengkung di bagian atas -->
+        </shape>
+    </item>
+
+    <!-- Shape untuk bagian bawah yang lurus -->
+    <item android:top="16dp"> <!-- Membuat jarak 16dp dari atas -->
+        <shape>
+            <solid android:color="@color/white" /> <!-- Warna latar belakang RelativeLayout -->
+        </shape>
+    </item>
+
+</layer-list>
