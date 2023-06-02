@@ -22,4 +22,6 @@
     <string name="title_scan">Pindai bahan</string>
     <string name="back_button">back_button</string>
     <string name="btn_info">info</string>
+    <string name="no_ingredient">Tidak ada bahan masakan yang terdeteksi</string>
+    <string name="add_ingredient">add ingredient</string>
 </resources>
