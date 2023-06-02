@@ -7,7 +7,7 @@
     tools:context=".RegisterActivity">
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/tvFullname"
         android:layout_width="277dp"
         android:layout_height="87dp"
         android:layout_marginTop="76dp"
@@ -40,14 +40,14 @@
         android:autofillHints="" />
 
     <EditText
-        android:id="@+id/nameET"
+        android:id="@+id/fullnameET"
         android:layout_width="240dp"
         android:layout_height="48dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/edit_text_border"
         android:ems="12"
         android:fontFamily="@font/poppins"
-        android:hint="@string/nama_pengguna"
+        android:hint="@string/fullname"
         android:inputType="textPersonName"
         android:paddingStart="15dp"
         android:paddingEnd="15dp"
@@ -73,7 +73,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.502"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/nameET"
+        app:layout_constraintTop_toBottomOf="@+id/fullnameET"
         android:autofillHints="" />
 
     <Button
@@ -98,7 +98,7 @@
         android:contentDescription="@string/register_logo"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/tvFullname"
         app:srcCompat="@drawable/register_ava"
         tools:ignore="ImageContrastCheck" />
 

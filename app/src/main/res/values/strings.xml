@@ -3,7 +3,7 @@
     <string name="selamat_datang_di_laook">Selamat Datang di Laook</string>
     <string name="hint_kata_sandi">Kata sandi</string>
     <string name="hint_alamat_email">Alamat email</string>
-    <string name="nama_pengguna">Nama Pengguna</string>
+    <string name="fullname">Nama Lengkap</string>
     <string name="daftar_sekarang">Daftar sekarang</string>
     <string name="tidak_punya_akun">Tidak punya akun?</string>
     <string name="masuk">Masuk</string>

@@ -1,15 +1,8 @@
 package com.example.laook
 
-import android.app.AlertDialog
-import android.app.Dialog
 import android.content.Intent
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
-import android.view.Window
-import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import com.google.firebase.auth.FirebaseAuth
@@ -17,7 +10,9 @@ import com.google.firebase.auth.FirebaseAuth
 class ProfileActivity : AppCompatActivity() {
 
     private lateinit var auth: FirebaseAuth
+//    private lateinit var databaseReference: DatabaseReference
     private lateinit var etEmail: TextView
+    private lateinit var tvFullname:TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +20,7 @@ class ProfileActivity : AppCompatActivity() {
 
         auth = FirebaseAuth.getInstance()
         etEmail = findViewById(R.id.etEmail)
+        tvFullname = findViewById(R.id.tvFullname)
 
 
 
@@ -41,6 +37,7 @@ class ProfileActivity : AppCompatActivity() {
 
         if (user != null) {
             etEmail.setText(user.email)
+            tvFullname.setText(user.displayName)
         }
 
         //btn info
@@ -53,11 +50,5 @@ class ProfileActivity : AppCompatActivity() {
         btnBack.setOnClickListener {
             onBackPressed() // Perform the back button action (go back)
         }
-
-
     }
-
-
-
-
 }

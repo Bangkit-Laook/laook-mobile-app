@@ -51,7 +51,7 @@
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
       android:layout_marginStart="48dp"
-      android:layout_marginTop="20dp"
+      android:layout_marginTop="88dp"
       android:fontFamily="@font/poppins_medium"
       android:text="Logout"
       android:textColor="@color/red"
@@ -76,7 +76,7 @@
       android:id="@+id/etEmail"
       android:layout_width="wrap_content"
       android:layout_height="wrap_content"
-      android:layout_marginStart="48dp"
+      android:layout_marginStart="44dp"
       android:layout_marginTop="4dp"
       android:textSize="14sp"
       android:textColor="@color/black"
@@ -84,5 +84,32 @@
       android:fontFamily="@font/poppins"
       app:layout_constraintStart_toStartOf="parent"
       app:layout_constraintTop_toBottomOf="@+id/emailTitle" />
+
+  <TextView
+      android:id="@+id/fullnameTitle"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="44dp"
+      android:layout_marginTop="12dp"
+      android:fontFamily="@font/poppins_medium"
+      android:text="Full name"
+      android:textColor="@color/black"
+      android:textSize="14sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/etEmail" />
+
+  <TextView
+      android:id="@+id/tvFullname"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="44dp"
+      android:layout_marginTop="4dp"
+      android:textSize="14sp"
+      android:textColor="@color/black"
+      android:enabled="false"
+      android:fontFamily="@font/poppins"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/fullnameTitle" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
