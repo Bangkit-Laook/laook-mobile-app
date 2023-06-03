@@ -33,3 +33,16 @@ data class StepsResponse(
     val steps:String
 )
 
+data class Menu(
+    val name: String,
+    val description: String,
+    val image_url: String,
+    val ingredients: List<String>,
+    val steps: List<String>,
+    val menus: String
+)
+
+data class ApiResponse<T>(
+    val data: T?,
+    val error: String?
+)
