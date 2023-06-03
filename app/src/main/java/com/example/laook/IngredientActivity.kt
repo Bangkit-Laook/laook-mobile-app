@@ -2,14 +2,9 @@ package com.example.laook
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.laook.databinding.ActivityIngredientBinding
 import com.example.laook.response.Menu
 import com.example.laook.retrofit.ApiConfig
@@ -22,6 +17,17 @@ class IngredientActivity : AppCompatActivity() {
     private lateinit var binding: ActivityIngredientBinding
     private lateinit var adapter: IngredientAdapter
     private var ingredientList: MutableList<String> = mutableListOf()
+    private var completeIngredientList: MutableList<String> = mutableListOf()
+
+    // Daftar ingredient yang tersedia
+    private val availableIngredients = listOf(
+        "Ingredient 1",
+        "Ingredient 2",
+        "Ingredient 3",
+        "Ingredient 4",
+        "apel",
+        // Tambahkan ingredient lainnya sesuai kebutuhan
+    )
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -29,7 +35,7 @@ class IngredientActivity : AppCompatActivity() {
         binding = ActivityIngredientBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        adapter = IngredientAdapter(ingredientList)
+        adapter = IngredientAdapter(ingredientList, ::deleteIngredient)
         binding.rvIngredient.layoutManager = LinearLayoutManager(this)
         binding.rvIngredient.adapter = adapter
 
@@ -50,6 +56,7 @@ class IngredientActivity : AppCompatActivity() {
                     if (menus != null && menus.isNotEmpty()) {
                         val ingredients = menus[0].ingredients
                         ingredientList.addAll(ingredients)
+                        completeIngredientList.addAll(ingredients)
                         adapter.notifyDataSetChanged()
                     }
                 } else {
@@ -64,13 +71,17 @@ class IngredientActivity : AppCompatActivity() {
     }
 
     private fun showIngredientSelectionDialog() {
-        val ingredients = arrayOf("Ingredient 1", "Ingredient 2", "Ingredient 3")
+        val availableIngredientArray = availableIngredients.toTypedArray()
 
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Select Ingredient")
-        builder.setItems(ingredients) { dialog, which ->
-            val selectedIngredient = ingredients[which]
-            addIngredient(selectedIngredient)
+        builder.setItems(availableIngredientArray) { dialog, which ->
+            val selectedIngredient = availableIngredientArray[which]
+            if (!ingredientList.contains(selectedIngredient)) {
+                addIngredient(selectedIngredient)
+            } else {
+                Toast.makeText(this@IngredientActivity, "Ingredient already added", Toast.LENGTH_SHORT).show()
+            }
         }
         builder.setNegativeButton("Cancel") { dialog, which ->
             dialog.dismiss()
@@ -80,7 +91,13 @@ class IngredientActivity : AppCompatActivity() {
 
     private fun addIngredient(ingredient: String) {
         ingredientList.add(ingredient)
+        completeIngredientList.add(ingredient)
+        adapter.notifyDataSetChanged()
+    }
+
+    private fun deleteIngredient(ingredient: String) {
+        ingredientList.remove(ingredient)
+        completeIngredientList.remove(ingredient)
         adapter.notifyDataSetChanged()
     }
 }
-
