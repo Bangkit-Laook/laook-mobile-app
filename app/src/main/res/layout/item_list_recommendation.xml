@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/card_view"
+    android:layout_gravity="center"
+    android:layout_marginStart="8dp"
+    android:layout_marginTop="4dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="4dp"
+    app:cardCornerRadius="8dp"
+    android:elevation="4dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/tv_item_name"
+            android:layout_width="240dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:fontFamily="@font/poppins_medium"
+            android:paddingBottom="8dp"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:transitionName="name"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/iv_item_photo"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="menu title" />
+
+        <ImageView
+            android:id="@+id/iv_item_photo"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/rounded_item_detail"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_image"
+            android:transitionName="photo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.003"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/btnDetail"
+            android:layout_width="88dp"
+            android:layout_height="34dp"
+            android:layout_marginStart="121dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/button_rounded"
+            android:fontFamily="@font/poppins"
+            android:text="@string/detail"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.681"
+            app:layout_constraintStart_toEndOf="@+id/iv_item_photo"
+            tools:ignore="SmallSp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

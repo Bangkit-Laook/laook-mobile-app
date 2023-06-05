@@ -63,6 +63,7 @@
         android:background="@color/white_gray"
         android:foregroundGravity="center"
         android:padding="10dp"
+        android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />

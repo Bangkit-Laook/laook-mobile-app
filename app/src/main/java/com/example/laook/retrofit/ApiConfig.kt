@@ -1,26 +1,19 @@
 package com.example.laook.retrofit
 
-import com.example.laook.response.ApiResponse
-import com.example.laook.response.Menu
-import retrofit2.Callback
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 
-
 class ApiConfig {
-    private val apiService: ApiService
+    companion object {
+        private val BASE_URL = "https://laook-api-476f6w6koq-et.a.run.app/"
 
-    init {
-        val retrofit = Retrofit.Builder()
-            .baseUrl("https://647b3a6ad2e5b6101db1014a.mockapi.io/api/v1/")
-            .addConverterFactory(GsonConverterFactory.create())
-            .build()
+        fun createApiService(): ApiService {
+            val retrofit = Retrofit.Builder()
+                .baseUrl(BASE_URL)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
 
-        apiService = retrofit.create(ApiService::class.java)
-    }
-
-    fun getMenu(menuId: String, callback: Callback<List<Menu>>) {
-        val call = apiService.getMenu(menuId)
-        call.enqueue(callback)
+            return retrofit.create(ApiService::class.java)
+        }
     }
 }

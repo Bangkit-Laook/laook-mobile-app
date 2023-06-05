@@ -3,9 +3,9 @@ package com.example.laook
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 
-class RecommendationActivity : AppCompatActivity() {
+class DetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recommendation)
+        setContentView(R.layout.activity_detail)
     }
 }

@@ -24,4 +24,6 @@
     <string name="btn_info">info</string>
     <string name="no_ingredient">Tidak ada bahan masakan yang terdeteksi</string>
     <string name="add_ingredient">add ingredient</string>
+    <string name="confirm">Konfirmasi</string>
+    <string name="detail">Detail</string>
 </resources>
