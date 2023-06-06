@@ -7,6 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
+import com.example.laook.Scan.ScanActivity
 import com.example.laook.databinding.ActivityMainBinding
 import com.google.android.material.appbar.MaterialToolbar
 

@@ -1,10 +1,12 @@
-package com.example.laook
+package com.example.laook.Profile
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
+import com.example.laook.Login.LoginActivity
+import com.example.laook.R
 import com.google.firebase.auth.FirebaseAuth
 
 class ProfileActivity : AppCompatActivity() {

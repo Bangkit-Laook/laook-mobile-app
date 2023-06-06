@@ -1,11 +1,10 @@
-package com.example.laook
+package com.example.laook.Scan
 
 import android.Manifest
 import android.annotation.SuppressLint
 import android.app.AlertDialog
 import android.content.ContentResolver
 import android.content.Context
-import android.content.Intent
 import android.content.pm.PackageManager
 import android.graphics.BitmapFactory
 import android.net.Uri
@@ -16,23 +15,36 @@ import android.provider.MediaStore
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.core.app.ActivityCompat
 import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
+import com.example.laook.R
 import com.example.laook.databinding.ActivityScanBinding
+import com.example.laook.nerimaActivity
+import com.example.laook.response.ScanResponse
+import com.example.laook.retrofit.ApiConfig
+import okhttp3.MediaType.Companion.toMediaType
+import okhttp3.MultipartBody
+import okhttp3.RequestBody.Companion.asRequestBody
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 import java.io.File
 import java.io.FileOutputStream
 import java.io.InputStream
 import java.io.OutputStream
 import java.text.SimpleDateFormat
 import java.util.Locale
+import android.content.Intent
 
 class ScanActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityScanBinding
     private lateinit var currentPhotoPath: String
     private var getFile: File? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,9 +74,9 @@ class ScanActivity : AppCompatActivity() {
             startGallery()
         }
 
-//        binding.btnAccept.setOnClickListener {
-//            uploadImage()
-//        }
+        binding.btnAccept.setOnClickListener {
+            uploadImage()
+        }
 
     }
 
@@ -198,6 +210,53 @@ class ScanActivity : AppCompatActivity() {
         }
 
         dialog.show()
+    }
+
+    private fun uploadImage() {
+        if (getFile != null) {
+
+            val file = getFile as File
+
+            val requestImageFile = file.asRequestBody("image/jpeg".toMediaType())
+            val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
+                "image",
+                file.name,
+                requestImageFile
+            )
+
+            val apiService = ApiConfig.createApiService()
+            val uploadImageRequest = apiService.uploadImage(imageMultipart)
+            uploadImageRequest.enqueue(object : Callback<ScanResponse> {
+                override fun onResponse(
+                    call: Call<ScanResponse>,
+                    response: Response<ScanResponse>
+                ){
+                    if (response.isSuccessful) {
+                        val responseBody = response.body()
+                        if (responseBody != null ) {
+                            val ingredients = responseBody.ingredients.joinToString(", ")
+
+                            val intent = Intent(this@ScanActivity, nerimaActivity::class.java)
+
+                            // Menyisipkan data ke dalam Intent
+
+                            intent.putExtra("ingredients", ingredients)
+                            // Memulai activity selanjutnya
+                            startActivity(intent)
+
+                        }
+                    } else {
+//                        error output
+                    }
+                }
+                override fun onFailure(call: Call<ScanResponse>, t: Throwable) {
+                    Toast.makeText(this@ScanActivity, t.message, Toast.LENGTH_SHORT).show()
+                }
+            })
+
+        } else {
+            Toast.makeText(this@ScanActivity, "Silakan masukkan berkas gambar terlebih dahulu.", Toast.LENGTH_SHORT).show()
+        }
     }
 
     companion object {

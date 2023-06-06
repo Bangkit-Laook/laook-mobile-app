@@ -11,13 +11,13 @@ class IngredientViewModel : ViewModel() {
 
     init {
         // Contoh daftar bahan yang diambil dari sumber data
-        val listIngredients = mutableListOf("ing8_0")
+        val listIngredients = mutableListOf("")
         _ingredients.value = listIngredients
     }
 
     fun getAllIngredients(): List<String> {
         // Simulasikan pengambilan daftar semua bahan dari sumber data
-        val allIngredients = listOf("ing0_1", "ing0_2", "ing0_3", "ing0_4","ing1_0","ing1_1","ing1_2","ing2_0","ing2_1","ing3_0")
+        val allIngredients = listOf("ing_1", "ing_2", "ing_3", "ing_4", "ing_5","ing_6","ing_7","ing_8","ing_9","ing_10","ing_11")
 
         return allIngredients
     }

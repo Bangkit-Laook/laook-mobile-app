@@ -22,8 +22,13 @@
     <string name="title_scan">Pindai bahan</string>
     <string name="back_button">back_button</string>
     <string name="btn_info">info</string>
+    <string name="btn_add_favorite">add favorite</string>
     <string name="no_ingredient">Tidak ada bahan masakan yang terdeteksi</string>
     <string name="add_ingredient">add ingredient</string>
     <string name="confirm">Konfirmasi</string>
     <string name="detail">Detail</string>
+    <string name="title_detail">Detail</string>
+    <string name="title_ingredients">Bahan yang diperlukan:</string>
+    <string name="title_how_to_cook">Cara Memasak:</string>
+
 </resources>

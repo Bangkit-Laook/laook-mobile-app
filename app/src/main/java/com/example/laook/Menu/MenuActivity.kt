@@ -1,16 +1,17 @@
 package com.example.laook.Menu
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.provider.DocumentsContract.Root
-import android.view.Menu
+
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.laook.Detail.DetailActivity
 import com.example.laook.R
-import com.example.laook.ResultActivity
 import com.example.laook.databinding.ActivityMenuBinding
 import com.example.laook.databinding.ActivityResultBinding
+import com.example.laook.response.Menu
 
 class MenuActivity : AppCompatActivity() {
     private lateinit var viewModel: MenuViewModel
@@ -43,16 +44,9 @@ class MenuActivity : AppCompatActivity() {
         displayMenusByIngredients()
 
 
-//        val completeIngredients = intent.getStringArrayListExtra(EXTRA_INGREDIENTS)
-////        val result = completeIngredients
     }
 
     private fun displayMenusByIngredients() {
-        // Daftar bahan-bahan yang ingin dicari
-//        val ingredients = listOf("ing0_1") sudah benar
-
-//        val ingredients = completeIngredients.toList()
-
         // Panggil metode di ViewModel untuk mendapatkan menu berdasarkan bahan-bahan
         viewModel.getMenusByIngredients(completeIngredients).observe(this, { menus ->
             // Filter menus based on ingredients
@@ -64,7 +58,21 @@ class MenuActivity : AppCompatActivity() {
 
             // Update data pada adapter
             adapter.setMenus(filteredMenus)
+
+            adapter.setOnClickListener { menu ->
+                startDetailActivity(menu)
+            }
+
+
         })
     }
+
+
+    private fun startDetailActivity(menu: Menu) {
+        val intent = Intent(this, DetailActivity::class.java)
+        intent.putExtra(DetailActivity.EXTRA_MENU, menu)
+        startActivity(intent)
+    }
+
 
 }

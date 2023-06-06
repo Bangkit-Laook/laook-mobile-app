@@ -23,25 +23,19 @@
         android:theme="@style/Theme.Laook"
         tools:targetApi="31">
         <activity
-            android:name=".ResultActivity"
+            android:name=".nerimaActivity"
             android:exported="false" />
         <activity
             android:name=".Menu.MenuActivity"
             android:exported="false" />
         <activity
-            android:name=".DetailActivity"
+            android:name=".Detail.DetailActivity"
             android:exported="false" />
         <activity
             android:name=".IngredientActivity"
-            android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-        </activity>
+            android:exported="false" />
         <activity
-            android:name=".ProfileActivity"
+            android:name=".Profile.ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".SplashScreenActivity"
@@ -51,13 +45,19 @@
             android:exported="true"
             android:label="@string/title_activity_home" />
         <activity
-            android:name=".ScanActivity"
+            android:name=".Scan.ScanActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".Register.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".RegisterActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LoginActivity"
+            android:name=".Login.LoginActivity"
             android:exported="false" />
 
         <provider
