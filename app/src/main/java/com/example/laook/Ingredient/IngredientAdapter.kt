@@ -43,4 +43,8 @@ class IngredientAdapter : RecyclerView.Adapter<IngredientAdapter.IngredientViewH
         ingredients.addAll(newIngredients)
         notifyDataSetChanged()
     }
+
+
+
+
 }

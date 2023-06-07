@@ -51,7 +51,6 @@ class MenuAdapter : RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
 //        private val nameTextViewDetail: TextView = itemView.findViewById(R.id.tv_detail_name)
 //        private val descriptionTextView: TextView = itemView.findViewById(R.id.descriptionTextView)
         private val imageView: ImageView = itemView.findViewById(R.id.iv_item_photo)
-        private val detailButton: Button = itemView.findViewById(R.id.btnDetail)
 
 
         fun bind(menu: Menu) {
@@ -63,10 +62,6 @@ class MenuAdapter : RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
             Glide.with(itemView.context)
                 .load(menu.image_url)
                 .into(imageView)
-
-            detailButton.setOnClickListener {
-//                listener.onMenu
-            }
 
 
         }

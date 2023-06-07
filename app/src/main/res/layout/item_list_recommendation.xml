@@ -51,23 +51,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/btnDetail"
-            android:layout_width="88dp"
-            android:layout_height="34dp"
-            android:layout_marginStart="121dp"
-            android:layout_marginBottom="8dp"
-            android:background="@drawable/button_rounded"
-            android:fontFamily="@font/poppins"
-            android:text="@string/detail"
-            android:textAllCaps="false"
-            android:textColor="@color/white"
-            android:textSize="10sp"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.681"
-            app:layout_constraintStart_toEndOf="@+id/iv_item_photo"
-            tools:ignore="SmallSp" />
+
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

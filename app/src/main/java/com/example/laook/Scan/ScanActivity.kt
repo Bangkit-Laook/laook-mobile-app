@@ -22,7 +22,6 @@ import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import com.example.laook.R
 import com.example.laook.databinding.ActivityScanBinding
-import com.example.laook.nerimaActivity
 import com.example.laook.response.ScanResponse
 import com.example.laook.retrofit.ApiConfig
 import okhttp3.MediaType.Companion.toMediaType
@@ -38,6 +37,7 @@ import java.io.OutputStream
 import java.text.SimpleDateFormat
 import java.util.Locale
 import android.content.Intent
+import com.example.laook.IngredientActivity
 
 class ScanActivity : AppCompatActivity() {
 
@@ -234,13 +234,17 @@ class ScanActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         val responseBody = response.body()
                         if (responseBody != null ) {
-                            val ingredients = responseBody.ingredients.joinToString(", ")
+//                            val ingredients = responseBody.ingredients.joinToString(", ")
+                            val ingredients = responseBody.ingredients
 
-                            val intent = Intent(this@ScanActivity, nerimaActivity::class.java)
+
+                            val intent = Intent(this@ScanActivity, IngredientActivity::class.java)
 
                             // Menyisipkan data ke dalam Intent
 
-                            intent.putExtra("ingredients", ingredients)
+//                            intent.putExtra("ingredients", ingredients)
+                            intent.putStringArrayListExtra("ingredients", ArrayList(ingredients))
+
                             // Memulai activity selanjutnya
                             startActivity(intent)
 

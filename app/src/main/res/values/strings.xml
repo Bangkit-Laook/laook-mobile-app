@@ -30,5 +30,7 @@
     <string name="title_detail">Detail</string>
     <string name="title_ingredients">Bahan yang diperlukan:</string>
     <string name="title_how_to_cook">Cara Memasak:</string>
+    <string name="sub_title_home">Makanan sehat untuk hidup lebih sehat di masa depan</string>
+    <string name="desc_sub_title">nikmati hidup sehat dengan mengonsumsi makanan sehat yang memiliki cita rasa luar biasa yang menjadikan hidup Anda lebih sehat untuk hari ini dan di masa depan</string>
 
 </resources>

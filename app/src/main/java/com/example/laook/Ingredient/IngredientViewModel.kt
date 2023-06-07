@@ -6,14 +6,17 @@ import androidx.lifecycle.ViewModel
 
 class IngredientViewModel : ViewModel() {
     private val _ingredients = MutableLiveData<List<String>>()
+
+
+
+
     val ingredients: LiveData<List<String>>
         get() = _ingredients
 
-    init {
-        // Contoh daftar bahan yang diambil dari sumber data
-        val listIngredients = mutableListOf("")
-        _ingredients.value = listIngredients
+    fun setScanIngredients(scanIngredient: List<String>) {
+        _ingredients.value = scanIngredient
     }
+
 
     fun getAllIngredients(): List<String> {
         // Simulasikan pengambilan daftar semua bahan dari sumber data

@@ -48,6 +48,16 @@ class IngredientActivity : AppCompatActivity() {
         binding.btnConfirm.setOnClickListener {
            navigateToResultActivity()
         }
+
+        val scanIngredients = intent.getStringArrayListExtra("ingredients")
+        val scanIngredientsList = scanIngredients?.toList()
+
+
+        if (scanIngredientsList != null) {
+            viewModel.setScanIngredients(scanIngredientsList)
+        }
+
+
     }
 
     private fun displaySelectedIngredients() {
@@ -74,6 +84,7 @@ class IngredientActivity : AppCompatActivity() {
         }
         builder.create().show()
     }
+
 
     private fun navigateToResultActivity() {
         val intent = Intent(this, MenuActivity::class.java)

@@ -63,7 +63,6 @@
             android:layout_width="390dp"
             android:layout_height="295dp"
             android:layout_marginTop="104dp"
-
             android:padding="2dp"
             android:transitionName="photo"
             app:layout_constraintEnd_toEndOf="parent"
