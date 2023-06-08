@@ -13,8 +13,8 @@ import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.laook.Ingredient.IngredientViewModel
-import com.example.laook.Menu.MenuActivity
+import com.example.laook.ui.Ingredient.IngredientViewModel
+import com.example.laook.ui.Menu.MenuActivity
 import com.example.laook.databinding.ActivityIngredientBinding
 import com.example.laook.databinding.ItemIngredientBinding
 

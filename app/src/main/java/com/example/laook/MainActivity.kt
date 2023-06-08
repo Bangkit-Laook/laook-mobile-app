@@ -7,7 +7,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
-import com.example.laook.Scan.ScanActivity
+import com.example.laook.ui.Scan.ScanActivity
 import com.example.laook.databinding.ActivityMainBinding
 import com.google.android.material.appbar.MaterialToolbar
 
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         // menu should be considered as top level destinations.
         val appBarConfiguration = AppBarConfiguration(
             setOf(
-                R.id.navigation_home, R.id.navigation_favorite
+                R.id.navigation_home, R.id.navigation_profile
             )
         )
 

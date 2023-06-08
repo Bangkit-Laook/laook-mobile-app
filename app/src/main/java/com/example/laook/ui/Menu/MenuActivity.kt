@@ -1,16 +1,16 @@
-package com.example.laook.Menu
+package com.example.laook.ui.Menu
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.laook.Detail.DetailActivity
+import com.example.laook.ui.Detail.DetailActivity
 import com.example.laook.R
 import com.example.laook.databinding.ActivityMenuBinding
-import com.example.laook.databinding.ActivityResultBinding
 import com.example.laook.response.Menu
 
 class MenuActivity : AppCompatActivity() {
@@ -42,6 +42,14 @@ class MenuActivity : AppCompatActivity() {
 
         // Panggil metode untuk menampilkan menu berdasarkan bahan-bahan
         displayMenusByIngredients()
+
+        // Find the back button ImageView
+        val btnBack: ImageView = findViewById(R.id.btnBack)
+
+        // Set click listener for the back button
+        btnBack.setOnClickListener {
+            onBackPressed() // Perform the back button action (go back)
+        }
 
 
     }

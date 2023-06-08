@@ -1,4 +1,4 @@
-package com.example.laook.Menu
+package com.example.laook.ui.Menu
 
 import android.view.LayoutInflater
 import android.view.View

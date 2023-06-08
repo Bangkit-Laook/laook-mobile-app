@@ -4,12 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Detail.DetailActivity"
-    android:background="@color/white_gray">
+    tools:context=".ui.Detail.DetailActivity"
+    android:background="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="wrap_content">
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
@@ -46,38 +46,34 @@
                 tools:layout_editor_absoluteX="173dp"
                 tools:layout_editor_absoluteY="16dp" />
 
-            <ImageView
-                android:id="@+id/btnInfo"
-                android:layout_width="35dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="25dp"
-                android:contentDescription="@string/btn_add_favorite"
-                android:src="@drawable/ic_add_favorite"
-                android:layout_gravity="end"
-                android:layout_marginEnd="25dp"/>
 
         </com.google.android.material.appbar.MaterialToolbar>
 
         <ImageView
             android:id="@+id/iv_detail_photo"
-            android:layout_width="390dp"
-            android:layout_height="295dp"
+            android:layout_width="370dp"
+            android:layout_height="290dp"
             android:layout_marginTop="104dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
             android:padding="2dp"
             android:transitionName="photo"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/logo_splashscreen"
+            app:srcCompat="@drawable/ic_image"
             android:scaleType="centerCrop"
             android:background="@drawable/rounded_item_detail" />
 
         <TextView
             android:id="@+id/tv_detail_name"
-            android:layout_width="390dp"
+            android:layout_width="match_parent"
             android:layout_height="47dp"
             android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:textColor="@color/primary_black"
             android:fontFamily="@font/poppins_semibold"
             android:textSize="18sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -86,22 +82,28 @@
 
         <TextView
             android:id="@+id/tv_detail_ingredient"
-            android:layout_width="377dp"
-            android:layout_height="42dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="@string/title_ingredients"
             android:textSize="14sp"
+            android:textColor="@color/primary_black"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_detail_name" />
 
         <TextView
             android:id="@+id/tv_detail_list_ingredient"
-            android:layout_width="360dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:fontFamily="@font/poppins_semibold"
+            android:fontFamily="@font/poppins"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:textColor="@color/primary_black"
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -110,22 +112,28 @@
 
         <TextView
             android:id="@+id/tv_detail_title_cooking"
-            android:layout_width="377dp"
-            android:layout_height="42dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
             android:fontFamily="@font/poppins_semibold"
             android:text="@string/title_how_to_cook"
             android:textSize="14sp"
+            android:textColor="@color/primary_black"
+            android:layout_marginStart="25dp"
+            android:layout_marginEnd="25dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_detail_list_ingredient" />
 
         <TextView
             android:id="@+id/tv_detail_list_cooking"
-            android:layout_width="360dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="8dp"
-            android:fontFamily="@font/poppins_semibold"
+            android:fontFamily="@font/poppins"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:textColor="@color/primary_black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.49"

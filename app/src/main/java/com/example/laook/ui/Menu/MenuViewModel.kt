@@ -1,4 +1,4 @@
-package com.example.laook.Menu
+package com.example.laook.ui.Menu
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

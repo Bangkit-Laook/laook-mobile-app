@@ -1,4 +1,4 @@
-package com.example.laook.Scan
+package com.example.laook.ui.Scan
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

@@ -16,6 +16,12 @@
     <string name="title_camera">Camera</string>
     <string name="title_favorite">Favorite</string>
     <string name="title_profile">Profile</string>
+    <string name="input_email">Please input your email</string>
+    <string name="invalid_email">Email is invalid</string>
+    <string name="input_pass">Please input your password</string>
+    <string name="pass_minimum_length">Password must be at least 8 characters long</string>
+    <string name="password">Password</string>
+    <string name="email">Email address</string>
     <string name="package_name">com.example.laook</string>
     <string name="choose_picture">Choose a picture</string>
     <string name="fav_kosong">Favorit anda masih kosong</string>

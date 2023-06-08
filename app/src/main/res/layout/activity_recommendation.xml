@@ -6,6 +6,8 @@
     android:transitionGroup="true"
     android:background="@color/white_gray">
 
+
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_story"
         android:layout_width="0dp"

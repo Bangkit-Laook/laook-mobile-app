@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Register.RegisterActivity">
+    tools:context=".ui.Authentication.RegisterActivity">
 
     <TextView
         android:id="@+id/tvFullname"
@@ -21,7 +21,7 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:ignore="TextSizeCheck" />
 
-    <EditText
+    <com.example.laook.ui.Authentication.customview.EmailCustomView
         android:id="@+id/emailET"
         android:layout_width="240dp"
         android:layout_height="48dp"
@@ -57,7 +57,7 @@
         app:layout_constraintTop_toBottomOf="@+id/emailET"
         android:autofillHints="" />
 
-    <EditText
+    <com.example.laook.ui.Authentication.customview.PassCustomView
         android:id="@+id/passET"
         android:layout_width="240dp"
         android:layout_height="48dp"

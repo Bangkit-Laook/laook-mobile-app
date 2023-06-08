@@ -1,9 +1,10 @@
-package com.example.laook.Detail
+package com.example.laook.ui.Detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.ImageView
 import com.bumptech.glide.Glide
-import com.example.laook.Menu.MenuAdapter
+import com.example.laook.ui.Menu.MenuAdapter
 import com.example.laook.R
 import com.example.laook.databinding.ActivityDetailBinding
 import com.example.laook.response.Menu
@@ -53,6 +54,14 @@ class DetailActivity : AppCompatActivity() {
             // Gunakan data menu untuk menampilkan detail menu
             // Contoh: nameTextView.text = menu.name
             //         descriptionTextView.text = menu.description
+        }
+
+        // Find the back button ImageView
+        val btnBack: ImageView = findViewById(R.id.btnBack)
+
+        // Set click listener for the back button
+        btnBack.setOnClickListener {
+            onBackPressed() // Perform the back button action (go back)
         }
     }
 }

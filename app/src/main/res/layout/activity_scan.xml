@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Scan.ScanActivity"
+    tools:context=".ui.Scan.ScanActivity"
     android:background="@color/white_gray">
 
     <com.google.android.material.appbar.MaterialToolbar
@@ -68,7 +68,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
 
-    <RelativeLayout
+
+    <LinearLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -77,47 +78,47 @@
         android:elevation="4dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView11">
+        app:layout_constraintStart_toStartOf="parent">
+
+        <ImageView
+            android:id="@+id/btnGallery"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="30dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="38dp"
+            android:src="@drawable/ic_gallery"
+            android:layout_weight="1"/>
+
 
         <ImageView
             android:id="@+id/btnCamera"
-            android:layout_width="80dp"
-            android:layout_height="80dp"
-            android:layout_alignParentStart="true"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
             android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginStart="169dp"
-            android:layout_marginTop="18dp"
-            android:layout_marginEnd="159dp"
+            android:layout_marginStart="45dp"
+            android:layout_marginEnd="30dp"
+            android:layout_marginTop="17dp"
+            android:layout_marginBottom="25dp"
+            android:layout_weight="2"
             android:src="@drawable/ic_camera3" />
 
         <ImageView
             android:id="@+id/btnAccept"
             android:layout_width="45dp"
             android:layout_height="45dp"
-            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_marginStart="320dp"
             android:layout_marginTop="38dp"
-            android:layout_marginEnd="30dp"
-            android:src="@drawable/ic_correct" />
-
-        <ImageView
-            android:id="@+id/btnGallery"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentEnd="true"
             android:layout_marginStart="30dp"
-            android:layout_marginTop="38dp"
-            android:layout_marginEnd="295dp"
-            android:src="@drawable/ic_gallery" />
+            android:layout_marginEnd="30dp"
+            android:src="@drawable/ic_correct"
+            android:layout_weight="3"/>
 
 
-    </RelativeLayout>
+
+
+    </LinearLayout>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

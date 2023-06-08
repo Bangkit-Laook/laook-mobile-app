@@ -1,4 +1,4 @@
-package com.example.laook.Ingredient
+package com.example.laook.ui.Ingredient
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData

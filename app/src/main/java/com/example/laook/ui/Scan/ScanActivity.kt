@@ -1,4 +1,4 @@
-package com.example.laook.Scan
+package com.example.laook.ui.Scan
 
 import android.Manifest
 import android.annotation.SuppressLint
@@ -234,7 +234,6 @@ class ScanActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         val responseBody = response.body()
                         if (responseBody != null ) {
-//                            val ingredients = responseBody.ingredients.joinToString(", ")
                             val ingredients = responseBody.ingredients
 
 
@@ -242,7 +241,6 @@ class ScanActivity : AppCompatActivity() {
 
                             // Menyisipkan data ke dalam Intent
 
-//                            intent.putExtra("ingredients", ingredients)
                             intent.putStringArrayListExtra("ingredients", ArrayList(ingredients))
 
                             // Memulai activity selanjutnya

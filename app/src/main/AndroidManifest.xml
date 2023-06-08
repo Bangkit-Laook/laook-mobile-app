@@ -26,10 +26,10 @@
             android:name=".nerimaActivity"
             android:exported="false" />
         <activity
-            android:name=".Menu.MenuActivity"
+            android:name=".ui.Menu.MenuActivity"
             android:exported="false" />
         <activity
-            android:name=".Detail.DetailActivity"
+            android:name=".ui.Detail.DetailActivity"
             android:exported="false" />
         <activity
             android:name=".IngredientActivity"
@@ -51,13 +51,13 @@
             android:exported="true"
             android:label="@string/title_activity_home" />
         <activity
-            android:name=".Scan.ScanActivity"
+            android:name=".ui.Scan.ScanActivity"
             android:exported="false"/>
         <activity
-            android:name=".Register.RegisterActivity"
+            android:name=".ui.Authentication.RegisterActivity"
             android:exported="false" />
         <activity
-            android:name=".Login.LoginActivity"
+            android:name=".ui.Authentication.LoginActivity"
             android:exported="false" />
 
         <provider

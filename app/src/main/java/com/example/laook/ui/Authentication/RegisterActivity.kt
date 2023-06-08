@@ -1,10 +1,9 @@
-package com.example.laook.Register
+package com.example.laook.ui.Authentication
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
-import com.example.laook.Login.LoginActivity
 import com.example.laook.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest

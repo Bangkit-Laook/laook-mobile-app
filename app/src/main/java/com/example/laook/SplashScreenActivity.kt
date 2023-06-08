@@ -8,7 +8,7 @@ import android.os.Handler
 import android.os.Looper
 import android.view.WindowInsets
 import android.view.WindowManager
-import com.example.laook.Login.LoginActivity
+import com.example.laook.ui.Authentication.LoginActivity
 import com.example.laook.databinding.ActivitySplashScreenBinding
 
 class SplashScreenActivity : AppCompatActivity() {
