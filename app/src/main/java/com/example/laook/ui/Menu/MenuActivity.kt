@@ -3,6 +3,7 @@ package com.example.laook.ui.Menu
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 
 import androidx.lifecycle.ViewModelProvider
@@ -55,6 +56,8 @@ class MenuActivity : AppCompatActivity() {
     }
 
     private fun displayMenusByIngredients() {
+        showLoading(true)
+
         // Panggil metode di ViewModel untuk mendapatkan menu berdasarkan bahan-bahan
         viewModel.getMenusByIngredients(completeIngredients).observe(this, { menus ->
             // Filter menus based on ingredients
@@ -71,6 +74,7 @@ class MenuActivity : AppCompatActivity() {
                 startDetailActivity(menu)
             }
 
+            showLoading(false)
 
         })
     }
@@ -80,6 +84,14 @@ class MenuActivity : AppCompatActivity() {
         val intent = Intent(this, DetailActivity::class.java)
         intent.putExtra(DetailActivity.EXTRA_MENU, menu)
         startActivity(intent)
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        if (isLoading) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
+        }
     }
 
 

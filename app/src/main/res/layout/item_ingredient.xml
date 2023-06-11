@@ -15,7 +15,7 @@
         android:layout_weight="1"
         android:fontFamily="@font/poppins_semibold"
         android:padding="8dp"
-        android:text="Bahan masak " />
+        android:text="@string/ingredient_list" />
 
     <ImageButton
         android:id="@+id/btnDeleteIngredient"

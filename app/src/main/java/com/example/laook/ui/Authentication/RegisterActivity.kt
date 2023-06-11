@@ -3,6 +3,7 @@ package com.example.laook.ui.Authentication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.example.laook.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
@@ -29,8 +30,10 @@ class RegisterActivity : AppCompatActivity() {
             val fullname = binding.fullnameET.text.toString()
 
             if (email.isNotEmpty() && pass.isNotEmpty() && fullname.isNotEmpty()) {
+                showLoading(true)
 
                 firebaseAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener { task ->
+                    showLoading(false)
                     if (task.isSuccessful) {
                         val user = firebaseAuth.currentUser
                         val profileUpdates = UserProfileChangeRequest.Builder()
@@ -53,6 +56,16 @@ class RegisterActivity : AppCompatActivity() {
             } else {
                 Toast.makeText(this, "Empty Field Are not Allowed !", Toast.LENGTH_SHORT).show()
             }
+        }
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        if (isLoading) {
+            binding.progressBar.visibility = View.VISIBLE
+            binding.button.isEnabled = false // Menonaktifkan tombol saat loading
+        } else {
+            binding.progressBar.visibility = View.GONE
+            binding.button.isEnabled = true // Mengaktifkan tombol setelah loading selesai
         }
     }
 }

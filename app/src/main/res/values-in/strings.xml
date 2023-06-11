@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Laook</string>
+    <string name="selamat_datang_di_laook">Selamat Datang di Laook</string>
+    <string name="hint_kata_sandi">Kata sandi</string>
+    <string name="hint_alamat_email">Alamat email</string>
+    <string name="fullname">Nama Lengkap</string>
+    <string name="daftar_sekarang">Daftar sekarang</string>
+    <string name="tidak_punya_akun">Tidak punya akun?</string>
+    <string name="masuk">Masuk</string>
+    <string name="register_logo">Register logo</string>
+    <string name="login_logo">Login logo</string>
+    <string name="sudah_punya_akun">Sudah punya akun?</string>
+    <string name="daftar">Daftar</string>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="title_home">Beranda</string>
+    <string name="title_camera">Kamera</string>
+    <string name="title_profile">Profil</string>
+    <string name="input_email">Mohon untuk memasukkan email</string>
+    <string name="invalid_email">Email tidak valid</string>
+    <string name="input_pass">Mohon untuk memasukkan kata sandi</string>
+    <string name="pass_minimum_length">Panjang kata sandi minimal harus 8 karakter</string>
+    <string name="password">Kata sandi</string>
+    <string name="email">Alamat email</string>
+    <string name="package_name">com.example.laook</string>
+    <string name="choose_picture">Pilih gambar</string>
+    <string name="title_scan">Pindai bahan</string>
+    <string name="back_button">back_button</string>
+    <string name="btn_info">info</string>
+    <string name="name_profile">Nama lengkap</string>
+    <string name="email_profile">Email Profil</string>
+    <string name="setting_profile">Pengaturan Profil</string>
+    <string name="no_ingredient">Tidak ada bahan masakan yang terdeteksi</string>
+    <string name="add_ingredient">menambahkan bahan</string>
+    <string name="language">Bahasa</string>
+    <string name="logout">Keluar</string>
+    <string name="confirm">Konfirmasi</string>
+    <string name="detail">Detail</string>
+    <string name="title_detail">Detail Menu</string>
+    <string name="title_ingredients">Bahan yang diperlukan:</string>
+    <string name="title_how_to_cook">Cara Memasak:</string>
+    <string name="sub_title_home">Makanan sehat untuk hidup lebih sehat di masa depan</string>
+    <string name="desc_sub_title">nikmati hidup sehat dengan mengonsumsi makanan sehat yang memiliki cita rasa luar biasa yang menjadikan hidup Anda lebih sehat untuk hari ini dan di masa depan</string>
+    <string name="menu_title">Rekomendasi Menu</string>
+    <string name="adjusment_ingredient">Mengatur Bahan</string>
+    <string name="save">Simpan</string>
+    <string name="welcome_home">\nCari ide masakan?</string>
+    <string name="Welcome_home_hi">Hai,</string>
+    <string name="how_to_scan_1">1. Tata seluruh bahan masakan di atas tempat rata seperti meja</string>
+    <string name="how_to_scan_2">2. Letakkan bahan masakan menghadap ke atas (arah kamera)</string>
+    <string name="how_to_scan_3">3. Foto bahan masakan</string>
+    <string name="confirm_dialog_info">Saya Mengerti</string>
+    <string name="how_to_scan">Cara foto bahan masakan</string>
+    <string name="ingredient_list">bahan masakan</string>
+
+
+</resources>

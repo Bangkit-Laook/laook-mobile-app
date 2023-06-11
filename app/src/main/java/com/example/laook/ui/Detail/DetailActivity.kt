@@ -2,6 +2,7 @@ package com.example.laook.ui.Detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.example.laook.ui.Menu.MenuAdapter
@@ -64,4 +65,5 @@ class DetailActivity : AppCompatActivity() {
             onBackPressed() // Perform the back button action (go back)
         }
     }
+
 }

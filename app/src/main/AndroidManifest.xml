@@ -23,7 +23,7 @@
         android:theme="@style/Theme.Laook"
         tools:targetApi="31">
         <activity
-            android:name=".nerimaActivity"
+            android:name=".ui.profile.EditProfileActivity"
             android:exported="false" />
         <activity
             android:name=".ui.Menu.MenuActivity"
@@ -33,9 +33,6 @@
             android:exported="false" />
         <activity
             android:name=".IngredientActivity"
-            android:exported="false" />
-        <activity
-            android:name=".Profile.ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".SplashScreenActivity"
@@ -52,7 +49,7 @@
             android:label="@string/title_activity_home" />
         <activity
             android:name=".ui.Scan.ScanActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".ui.Authentication.RegisterActivity"
             android:exported="false" />

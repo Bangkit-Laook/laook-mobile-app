@@ -4,10 +4,12 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.InputType
+import android.view.View
 import android.widget.ArrayAdapter
 import android.widget.AutoCompleteTextView
 import android.widget.Button
 import android.widget.EditText
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
@@ -58,6 +60,16 @@ class IngredientActivity : AppCompatActivity() {
         }
 
 
+
+        // Find the back button ImageView
+        val btnBack: ImageView = findViewById(R.id.btnBack)
+
+        // Set click listener for the back button
+        btnBack.setOnClickListener {
+            onBackPressed() // Perform the back button action (go back)
+        }
+
+
     }
 
     private fun displaySelectedIngredients() {
@@ -87,8 +99,19 @@ class IngredientActivity : AppCompatActivity() {
 
 
     private fun navigateToResultActivity() {
+        showLoading(true)
         val intent = Intent(this, MenuActivity::class.java)
         intent.putStringArrayListExtra(MenuActivity.EXTRA_INGREDIENTS, ArrayList(viewModel.ingredients.value))
         startActivity(intent)
+
+        showLoading(false)
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        if (isLoading) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
+        }
     }
 }

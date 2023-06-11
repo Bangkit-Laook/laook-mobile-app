@@ -3,6 +3,7 @@ package com.example.laook.ui.Authentication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.example.laook.MainActivity
 import com.example.laook.databinding.ActivityLoginBinding
@@ -30,8 +31,10 @@ class LoginActivity : AppCompatActivity() {
             val pass = binding.passET.text.toString()
 
             if (email.isNotEmpty() && pass.isNotEmpty()) {
+                showLoading(true)
 
                 firebaseAuth.signInWithEmailAndPassword(email, pass).addOnCompleteListener {
+                    showLoading(false)
                     if (it.isSuccessful){
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
@@ -52,6 +55,16 @@ class LoginActivity : AppCompatActivity() {
         if(firebaseAuth.currentUser != null) {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
+        }
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        if (isLoading) {
+            binding.progressBar.visibility = View.VISIBLE
+            binding.button.isEnabled = false // Menonaktifkan tombol saat loading
+        } else {
+            binding.progressBar.visibility = View.GONE
+            binding.button.isEnabled = true // Mengaktifkan tombol setelah loading selesai
         }
     }
 }

@@ -25,9 +25,9 @@
             android:layout_marginTop="22dp"
             android:layout_marginBottom="10dp"
             android:fontFamily="@font/poppins_semibold"
-            android:text="Cara foto bahan masakan"
+            android:text="@string/how_to_scan"
             android:textColor="@color/black"
-            android:textSize="16dp"
+            android:textSize="16sp"
             app:layout_constraintTop_toTopOf="parent"
             tools:layout_editor_absoluteX="5dp" />
 
@@ -39,53 +39,33 @@
             android:paddingBottom="20dp"
             android:layout_marginTop="5dp">
 
+            <!-- Guideline untuk poros tengah -->
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
             <ImageView
                 android:id="@+id/imageView4"
                 android:layout_width="120dp"
-                android:layout_height="80dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/register_ava"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.153"
+                android:layout_height="120dp"
+                android:src="@drawable/scan_correct"
                 app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/guideline"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
+                app:layout_constraintBottom_toBottomOf="parent" />
 
             <ImageView
                 android:id="@+id/imageView2"
                 android:layout_width="120dp"
-                android:layout_height="80dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginTop="20dp"
-                android:src="@drawable/no_data_favorit"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/imageView4"
+                android:layout_height="120dp"
+                android:src="@drawable/scan_wrong"
+                app:layout_constraintStart_toEndOf="@id/guideline"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.0" />
-
-            <ImageView
-                android:id="@+id/icCorrect"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="140dp"
-                android:layout_marginTop="16dp"
-                android:src="@drawable/ic_correct"
-                app:layout_constraintBottom_toTopOf="@+id/imageView4"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageView
-                android:id="@+id/icWrong"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:layout_marginStart="128dp"
-                android:layout_marginTop="8dp"
-                android:src="@drawable/ic_wrong"
-                app:layout_constraintBottom_toTopOf="@+id/imageView2"
-                app:layout_constraintStart_toEndOf="@+id/icCorrect"
-                app:layout_constraintTop_toTopOf="parent"
-                app:layout_constraintVertical_bias="0.277" />
+                app:layout_constraintBottom_toBottomOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -96,7 +76,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"
             android:fontFamily="@font/poppins"
-            android:text="1. Tata seluruh bahan masakan di atas tempat rata seperti meja"
+            android:text="@string/how_to_scan_1"
             android:textAlignment="textStart"
             android:textSize="12sp"
             android:textColor="@color/black"
@@ -109,7 +89,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"
             android:fontFamily="@font/poppins"
-            android:text="2. Letakkan bahan masakan  menghadap ke atas (arah kamera)"
+            android:text="@string/how_to_scan_2"
             android:textAlignment="textStart"
             android:textSize="12sp"
             android:textColor="@color/black"
@@ -122,7 +102,7 @@
             android:layout_marginStart="40dp"
             android:layout_marginEnd="40dp"
             android:fontFamily="@font/poppins"
-            android:text="3. Foto bahan masakan "
+            android:text="@string/how_to_scan_3"
             android:textAlignment="textStart"
             android:textSize="12sp"
             android:textColor="@color/black"
@@ -136,7 +116,7 @@
             android:layout_marginBottom="20dp"
             android:background="@drawable/button_rounded"
             android:fontFamily="@font/poppins_medium"
-            android:text="Saya Mengerti"
+            android:text="@string/confirm_dialog_info"
             android:textAllCaps="false" />
 
     </LinearLayout>

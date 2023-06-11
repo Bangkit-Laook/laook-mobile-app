@@ -9,6 +9,7 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.setupWithNavController
 import com.example.laook.ui.Scan.ScanActivity
 import com.example.laook.databinding.ActivityMainBinding
+import com.example.laook.ui.profile.EditProfileFragment
 import com.google.android.material.appbar.MaterialToolbar
 
 class MainActivity : AppCompatActivity() {
@@ -26,14 +27,12 @@ class MainActivity : AppCompatActivity() {
         val navController = findNavController(R.id.nav_host_fragment_activity_home)
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
-        val appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.navigation_home, R.id.navigation_profile
-            )
-        )
+//        val appBarConfiguration = AppBarConfiguration(
+//            setOf(
+//                R.id.navigation_home, R.id.navigation_profile
+//            )
+//        )
 
-//        supportActionBar?.hide()
-//        setupActionBarWithNavController(navController, appBarConfiguration)
         navView.setupWithNavController(navController)
 
         binding.scanMenu.setOnClickListener{
@@ -48,11 +47,6 @@ class MainActivity : AppCompatActivity() {
             onBackPressed()
         }
 
-
-
-
-
-
-
     }
+
 }

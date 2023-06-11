@@ -37,6 +37,7 @@ import java.io.OutputStream
 import java.text.SimpleDateFormat
 import java.util.Locale
 import android.content.Intent
+import android.view.View
 import com.example.laook.IngredientActivity
 
 class ScanActivity : AppCompatActivity() {
@@ -203,7 +204,7 @@ class ScanActivity : AppCompatActivity() {
         val titleTextView = dialogView.findViewById<TextView>(R.id.tvTitleInfo)
         val understandButton = dialogView.findViewById<Button>(R.id.btnUnderstand)
 
-        titleTextView.text = "Cara foto bahan masakan"
+//        titleTextView.text = "Cara foto bahan masakan"
 
         understandButton.setOnClickListener {
             dialog.dismiss()
@@ -226,11 +227,16 @@ class ScanActivity : AppCompatActivity() {
 
             val apiService = ApiConfig.createApiService()
             val uploadImageRequest = apiService.uploadImage(imageMultipart)
+
+            showLoading(true)
+
             uploadImageRequest.enqueue(object : Callback<ScanResponse> {
                 override fun onResponse(
                     call: Call<ScanResponse>,
                     response: Response<ScanResponse>
                 ){
+                    showLoading(false)
+
                     if (response.isSuccessful) {
                         val responseBody = response.body()
                         if (responseBody != null ) {
@@ -252,12 +258,21 @@ class ScanActivity : AppCompatActivity() {
                     }
                 }
                 override fun onFailure(call: Call<ScanResponse>, t: Throwable) {
+                    showLoading(false)
                     Toast.makeText(this@ScanActivity, t.message, Toast.LENGTH_SHORT).show()
                 }
             })
 
         } else {
             Toast.makeText(this@ScanActivity, "Silakan masukkan berkas gambar terlebih dahulu.", Toast.LENGTH_SHORT).show()
+        }
+    }
+
+    private fun showLoading(isLoading: Boolean) {
+        if (isLoading) {
+            binding.progressBar.visibility = View.VISIBLE
+        } else {
+            binding.progressBar.visibility = View.GONE
         }
     }
 
