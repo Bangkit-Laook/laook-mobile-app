@@ -39,8 +39,8 @@
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:id="@+id/photo_profile"
-        android:layout_width="62dp"
-        android:layout_height="62dp"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
         android:layout_marginStart="24dp"
         android:layout_marginTop="28dp"
         android:src="@drawable/ic_profile_picture"
@@ -51,8 +51,8 @@
         android:id="@+id/tvFullname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="44dp"
         android:fontFamily="@font/poppins_semibold"
         android:text="@string/name_profile"
         android:textSize="16sp"
@@ -63,8 +63,8 @@
         android:id="@+id/tvEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="3dp"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="2dp"
         android:fontFamily="@font/poppins"
         android:text="@string/email_profile"
         android:textSize="12sp"
@@ -73,10 +73,10 @@
 
     <ImageView
         android:id="@+id/edit_profile"
-        android:layout_width="31dp"
-        android:layout_height="23dp"
-        android:layout_marginTop="44dp"
-        android:layout_marginEnd="36dp"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="52dp"
+        android:layout_marginEnd="24dp"
         android:src="@drawable/edit_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/toolbar" />
