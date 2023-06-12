@@ -35,7 +35,6 @@ class MenuAdapter : RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
         val menu = menus[position]
         holder.bind(menu)
 
-        // Panggil listener saat item menu diklik
         holder.itemView.setOnClickListener {
             listener?.invoke(menu)
         }
@@ -47,17 +46,12 @@ class MenuAdapter : RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
 
     class MenuViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         private val nameTextView: TextView = itemView.findViewById(R.id.tv_item_name)
-//        private val nameTextViewDetail: TextView = itemView.findViewById(R.id.tv_detail_name)
-//        private val descriptionTextView: TextView = itemView.findViewById(R.id.descriptionTextView)
         private val imageView: ImageView = itemView.findViewById(R.id.iv_item_photo)
 
 
         fun bind(menu: Menu) {
             nameTextView.text = menu.name
-//            nameTextViewDetail.text = menu.name
-//            descriptionTextView.text = menu.description
 
-            // Load image using a library like Picasso or Glide
             Glide.with(itemView.context)
                 .load(menu.image_url)
                 .into(imageView)

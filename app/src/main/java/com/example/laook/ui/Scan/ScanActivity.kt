@@ -46,19 +46,16 @@ class ScanActivity : AppCompatActivity() {
     private lateinit var currentPhotoPath: String
     private var getFile: File? = null
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = ActivityScanBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Find the back button ImageView
         val btnBack: ImageView = findViewById(R.id.btnBack)
 
-        // Set click listener for the back button
         btnBack.setOnClickListener {
-            onBackPressed() // Perform the back button action (go back)
+            onBackPressed()
         }
 
         val btnInfo: ImageView = findViewById(R.id.btnInfo)
@@ -153,7 +150,6 @@ class ScanActivity : AppCompatActivity() {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 startTakePhoto()
             } else {
-                // Izin kamera ditolak, berikan tindakan alternatif atau beri tahu pengguna
                 // tentang kebutuhan izin tersebut
             }
         }
@@ -203,8 +199,6 @@ class ScanActivity : AppCompatActivity() {
 
         val understandButton = dialogView.findViewById<Button>(R.id.btnUnderstand)
 
-//        titleTextView.text = "Cara foto bahan masakan"
-
         understandButton.setOnClickListener {
             dialog.dismiss()
         }
@@ -243,12 +237,8 @@ class ScanActivity : AppCompatActivity() {
 
 
                             val intent = Intent(this@ScanActivity, IngredientActivity::class.java)
-
-                            // Menyisipkan data ke dalam Intent
-
                             intent.putStringArrayListExtra("ingredients", ArrayList(ingredients))
 
-                            // Memulai activity selanjutnya
                             startActivity(intent)
 
                         }

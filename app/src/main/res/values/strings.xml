@@ -65,5 +65,7 @@
     <string name="delete_ingredient">delete ingredient</string>
     <string name="menu_name">menu name</string>
     <string name="picture_menu">picture menu</string>
+    <string name="back_to_home">Back to Home</string>
+    <string name="no_data_menu">There is no menu available yet</string>
 
 </resources>

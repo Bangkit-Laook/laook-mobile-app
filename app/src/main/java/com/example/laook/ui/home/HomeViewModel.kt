@@ -9,7 +9,6 @@ class HomeViewModel : ViewModel() {
     val imageList = mutableListOf<SlideModel>()
 
     init {
-        // Tambahkan gambar default ke imageList jika diperlukan
         if (imageList.isEmpty()) {
             imageList.add(SlideModel("https://i.ibb.co/7GN6hSj/7967011.jpg"))
             imageList.add(SlideModel("https://i.ibb.co/B60qWRJ/5836803.jpg"))

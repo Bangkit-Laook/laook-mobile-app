@@ -60,12 +60,14 @@
     <string name="incorrect_image">incorrect image</string>
     <string name="home_image">home image</string>
     <string name="edit_profile">edit profile</string>
-    <string name="icon_language">icon language</string>
+    <string name="icon_language">icon bahasa</string>
     <string name="icon_to">icon to</string>
-    <string name="icon_logout">icon logout</string>
-    <string name="delete_ingredient">delete ingredient</string>
-    <string name="menu_name">menu name</string>
+    <string name="icon_logout">icon keluar</string>
+    <string name="delete_ingredient">hapus ingredient</string>
+    <string name="menu_name">nama menu</string>
     <string name="picture_menu">picture menu</string>
+    <string name="back_to_home">Kembali ke Beranda</string>
+    <string name="no_data_menu">Belum ada menu masakan yang tersedia</string>
 
 
 </resources>

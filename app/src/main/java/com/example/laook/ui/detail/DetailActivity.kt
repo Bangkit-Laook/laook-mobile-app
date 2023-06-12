@@ -1,16 +1,22 @@
 package com.example.laook.ui.detail
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
+import androidx.appcompat.widget.Toolbar
 import com.bumptech.glide.Glide
+import com.example.laook.MainActivity
 import com.example.laook.R
 import com.example.laook.databinding.ActivityDetailBinding
 import com.example.laook.response.Menu
+import com.example.laook.ui.Scan.ScanActivity
+import com.example.laook.ui.home.HomeFragment
 
 class DetailActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityDetailBinding
+
     companion object {
         const val EXTRA_MENU = "extra_menu"
     }
@@ -18,12 +24,6 @@ class DetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityDetailBinding.inflate(layoutInflater)
         setContentView(binding.root)
-
-
-
-//        val nameTextView = binding.tvDetailName
-//        val nameTextView = binding.tvDetailName
-
 
 
         val menu: Menu? = intent.getParcelableExtra(EXTRA_MENU)
@@ -50,17 +50,15 @@ class DetailActivity : AppCompatActivity() {
             val steps = menu.steps.joinToString("\n\n")
             stepsTextView.text = steps
 
-            // Gunakan data menu untuk menampilkan detail menu
-            // Contoh: nameTextView.text = menu.name
-            //         descriptionTextView.text = menu.description
+            binding.btnBackHome.setOnClickListener{
+                startActivity(Intent(this, MainActivity::class.java))
+            }
+
         }
 
-        // Find the back button ImageView
         val btnBack: ImageView = findViewById(R.id.btnBack)
-
-        // Set click listener for the back button
         btnBack.setOnClickListener {
-            onBackPressed() // Perform the back button action (go back)
+            onBackPressed()
         }
     }
 

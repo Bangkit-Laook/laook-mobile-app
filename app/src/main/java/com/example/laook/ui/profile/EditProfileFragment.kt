@@ -56,12 +56,6 @@ class EditProfileFragment : Fragment() {
             showImagePickerDialog()
         }
 
-
-//        binding.btnBack.setOnClickListener {
-//            val intent = Intent(requireContext(), ProfileFragment::class.java)
-//            startActivity(intent)
-//        }
-
         val btnBack: ImageView = binding.btnBack
         btnBack.setOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()

@@ -28,25 +28,19 @@ class MenuActivity : AppCompatActivity() {
         binding = ActivityMenuBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Inisialisasi ViewModel
         viewModel = ViewModelProvider(this).get(MenuViewModel::class.java)
 
-        // Inisialisasi RecyclerView dan adapter
         val recyclerView = findViewById<RecyclerView>(R.id.rv_recommendation)
         adapter = MenuAdapter()
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(this)
 
-        // Ambil completeIngredients dari intent
         completeIngredients = intent.getStringArrayListExtra(EXTRA_INGREDIENTS) ?: emptyList()
 
-        // Panggil metode untuk menampilkan menu berdasarkan bahan-bahan
         displayMenusByIngredients()
 
-        // Find the back button ImageView
         val btnBack: ImageView = findViewById(R.id.btnBack)
 
-        // Set click listener for the back button
         btnBack.setOnClickListener {
             onBackPressed() // Perform the back button action (go back)
         }
@@ -57,17 +51,20 @@ class MenuActivity : AppCompatActivity() {
     private fun displayMenusByIngredients() {
         showLoading(true)
 
-        // Panggil metode di ViewModel untuk mendapatkan menu berdasarkan bahan-bahan
         viewModel.getMenusByIngredients(completeIngredients).observe(this, { menus ->
-            // Filter menus based on ingredients
             val filteredMenus = menus.filter { menu ->
                 completeIngredients.all { ingredient ->
                     menu.ingredients.contains(ingredient)
                 }
             }
 
-            // Update data pada adapter
             adapter.setMenus(filteredMenus)
+
+            if (filteredMenus.isEmpty()) {
+                binding.tvNoData.visibility = View.VISIBLE
+            } else {
+                binding.tvNoData.visibility = View.GONE
+            }
 
             adapter.setOnClickListener { menu ->
                 startDetailActivity(menu)

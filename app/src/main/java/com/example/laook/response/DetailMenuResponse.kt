@@ -17,8 +17,6 @@ data class Menu(
 ) : Parcelable
 
 
-
-
 data class SuggestMenusRequest(val ingredients: List<String>)
 
 data class ScanResponse(

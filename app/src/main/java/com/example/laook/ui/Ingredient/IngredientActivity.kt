@@ -60,21 +60,28 @@ class IngredientActivity : AppCompatActivity() {
         }
 
 
-
-        // Find the back button ImageView
         val btnBack: ImageView = findViewById(R.id.btnBack)
 
-        // Set click listener for the back button
         btnBack.setOnClickListener {
-            onBackPressed() // Perform the back button action (go back)
+            onBackPressed()
         }
+
+
 
 
     }
 
+
+
+
     private fun displaySelectedIngredients() {
         viewModel.ingredients.observe(this, { ingredients ->
             adapter.setIngredients(ingredients)
+            if(ingredients.isEmpty()) {
+                binding.tvNoData.visibility = View.VISIBLE
+            } else {
+                binding.tvNoData.visibility = View.GONE
+            }
         })
     }
 
@@ -106,6 +113,8 @@ class IngredientActivity : AppCompatActivity() {
 
         showLoading(false)
     }
+
+
 
     private fun showLoading(isLoading: Boolean) {
         if (isLoading) {

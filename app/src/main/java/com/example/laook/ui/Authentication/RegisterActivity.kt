@@ -62,10 +62,10 @@ class RegisterActivity : AppCompatActivity() {
     private fun showLoading(isLoading: Boolean) {
         if (isLoading) {
             binding.progressBar.visibility = View.VISIBLE
-            binding.button.isEnabled = false // Menonaktifkan tombol saat loading
+            binding.button.isEnabled = false
         } else {
             binding.progressBar.visibility = View.GONE
-            binding.button.isEnabled = true // Mengaktifkan tombol setelah loading selesai
+            binding.button.isEnabled = true
         }
     }
 }

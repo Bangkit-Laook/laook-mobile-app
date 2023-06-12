@@ -26,6 +26,7 @@
             android:layout_height="35dp"
             android:layout_gravity="start"
             android:layout_marginStart="25dp"
+            android:stateListAnimator="@animator/button_press_anim"
             android:contentDescription="@string/back_button"
             android:src="@drawable/ic_back" />
 
@@ -70,6 +71,7 @@
         android:contentDescription="@string/add_ingredient"
         android:src="@drawable/ic_add"
         app:borderWidth="0dp"
+        android:stateListAnimator="@animator/button_press_anim"
         app:elevation="7dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,6 +114,7 @@
         android:text="@string/confirm"
         android:textAllCaps="false"
         android:textSize="14sp"
+        android:stateListAnimator="@animator/button_press_anim"
         app:layout_constraintBottom_toBottomOf="@+id/rv_ingredient"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

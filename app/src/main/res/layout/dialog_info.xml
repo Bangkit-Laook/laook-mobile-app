@@ -120,6 +120,7 @@
             android:fontFamily="@font/poppins_medium"
             android:text="@string/confirm_dialog_info"
             android:textAllCaps="false"
+            android:stateListAnimator="@animator/button_press_anim"
             tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>

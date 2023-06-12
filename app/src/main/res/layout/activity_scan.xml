@@ -26,6 +26,7 @@
             android:layout_height="35dp"
             android:layout_marginStart="25dp"
             android:layout_gravity="start"
+            android:stateListAnimator="@animator/button_press_anim"
             android:contentDescription="@string/back_button"
             android:src="@drawable/ic_back" />
 
@@ -49,6 +50,7 @@
             android:layout_marginStart="25dp"
             android:contentDescription="@string/btn_info"
             android:src="@drawable/ic_info"
+            android:stateListAnimator="@animator/button_press_anim"
             android:layout_gravity="end"
             android:layout_marginEnd="25dp"/>
 
@@ -77,6 +79,7 @@
         android:layout_marginTop="100dp"
         android:background="@drawable/rounded_background"
         android:elevation="4dp"
+        android:stateListAnimator="@animator/button_press_anim"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
@@ -88,6 +91,7 @@
             android:layout_marginStart="30dp"
             android:layout_marginEnd="30dp"
             android:layout_marginTop="38dp"
+            android:stateListAnimator="@animator/button_press_anim"
             android:contentDescription="@string/input_picture_from_gallery"
             android:src="@drawable/ic_gallery"
             android:layout_weight="1"/>
@@ -102,6 +106,7 @@
             android:layout_marginTop="17dp"
             android:layout_marginEnd="30dp"
             android:layout_marginBottom="25dp"
+            android:stateListAnimator="@animator/button_press_anim"
             android:layout_weight="2"
             android:contentDescription="@string/title_camera"
             android:src="@drawable/ic_camera3"
@@ -117,6 +122,7 @@
             android:layout_marginTop="38dp"
             android:layout_marginEnd="30dp"
             android:layout_weight="3"
+            android:stateListAnimator="@animator/button_press_anim"
             android:contentDescription="@string/confirm_picture"
             android:src="@drawable/ic_correct"
             tools:ignore="ObsoleteLayoutParam,ImageContrastCheck" />

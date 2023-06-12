@@ -48,6 +48,7 @@
             android:layout_height="wrap_content"
             app:backgroundTint="@color/primary_green"
             android:clickable="true"
+            android:stateListAnimator="@animator/button_press_anim"
             app:layout_anchor="@id/bottomAppBar2"
             app:srcCompat="@drawable/ic_camera2"
             android:contentDescription="@string/scan_menu"

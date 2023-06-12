@@ -25,6 +25,7 @@
         android:layout_gravity="center"
         android:background="@color/white_gray"
         android:backgroundTint="@color/white"
+        android:stateListAnimator="@animator/button_press_anim"
         android:contentDescription="@string/delete_ingredient"
         android:src="@drawable/ic_incorrect"
         tools:ignore="TouchTargetSizeCheck" />

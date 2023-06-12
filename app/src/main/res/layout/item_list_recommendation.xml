@@ -9,6 +9,7 @@
     android:layout_marginStart="8dp"
     android:layout_marginTop="4dp"
     android:layout_marginEnd="8dp"
+    android:stateListAnimator="@animator/button_press_anim"
     android:layout_marginBottom="4dp"
     app:cardCornerRadius="8dp"
     android:elevation="4dp">

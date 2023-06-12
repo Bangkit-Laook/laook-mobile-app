@@ -31,9 +31,6 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, ScanActivity::class.java))
         }
 
-
-
-
         val toolbar: MaterialToolbar = findViewById(R.id.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
 
