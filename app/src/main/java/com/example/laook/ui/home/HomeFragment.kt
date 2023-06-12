@@ -1,15 +1,11 @@
 package com.example.laook.ui.home
 
-import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
-import com.denzcoskun.imageslider.ImageSlider
-import com.denzcoskun.imageslider.models.SlideModel
-import com.example.laook.R
 import com.example.laook.databinding.FragmentHomeBinding
 import com.google.firebase.auth.FirebaseAuth
 

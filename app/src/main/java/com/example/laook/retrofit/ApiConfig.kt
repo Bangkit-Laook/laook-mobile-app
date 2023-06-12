@@ -5,7 +5,7 @@ import retrofit2.converter.gson.GsonConverterFactory
 
 class ApiConfig {
     companion object {
-        private val BASE_URL = "https://laook-api-476f6w6koq-et.a.run.app/"
+        private const val BASE_URL = "https://laook-api-476f6w6koq-et.a.run.app/"
 
         fun createApiService(): ApiService {
             val retrofit = Retrofit.Builder()

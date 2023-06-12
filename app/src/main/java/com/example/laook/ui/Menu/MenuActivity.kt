@@ -5,11 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.ImageView
-
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.example.laook.ui.Detail.DetailActivity
+import com.example.laook.ui.detail.DetailActivity
 import com.example.laook.R
 import com.example.laook.databinding.ActivityMenuBinding
 import com.example.laook.response.Menu

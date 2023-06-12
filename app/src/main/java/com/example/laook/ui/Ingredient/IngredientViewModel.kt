@@ -7,9 +7,6 @@ import androidx.lifecycle.ViewModel
 class IngredientViewModel : ViewModel() {
     private val _ingredients = MutableLiveData<List<String>>()
 
-
-
-
     val ingredients: LiveData<List<String>>
         get() = _ingredients
 

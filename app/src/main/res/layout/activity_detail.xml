@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.Detail.DetailActivity"
+    tools:context=".ui.detail.DetailActivity"
     android:background="@color/white">
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -58,6 +58,7 @@
             android:layout_marginEnd="40dp"
             android:padding="2dp"
             android:transitionName="photo"
+            android:contentDescription="@string/input_picture"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.493"
             app:layout_constraintStart_toStartOf="parent"

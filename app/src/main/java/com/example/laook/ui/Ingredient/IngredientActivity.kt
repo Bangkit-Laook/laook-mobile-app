@@ -1,24 +1,18 @@
-package com.example.laook
+package com.example.laook.ui.Ingredient
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.text.InputType
 import android.view.View
-import android.widget.ArrayAdapter
-import android.widget.AutoCompleteTextView
-import android.widget.Button
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.example.laook.ui.Ingredient.IngredientViewModel
+import com.example.laook.IngredientAdapter
+import com.example.laook.R
 import com.example.laook.ui.Menu.MenuActivity
 import com.example.laook.databinding.ActivityIngredientBinding
-import com.example.laook.databinding.ItemIngredientBinding
 
 
 class IngredientActivity : AppCompatActivity() {

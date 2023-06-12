@@ -1,11 +1,9 @@
-package com.example.laook.ui.Detail
+package com.example.laook.ui.detail
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.ImageView
 import com.bumptech.glide.Glide
-import com.example.laook.ui.Menu.MenuAdapter
 import com.example.laook.R
 import com.example.laook.databinding.ActivityDetailBinding
 import com.example.laook.response.Menu

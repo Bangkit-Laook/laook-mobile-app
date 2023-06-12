@@ -12,7 +12,6 @@
     <string name="login_logo">Login logo</string>
     <string name="sudah_punya_akun">Sudah punya akun?</string>
     <string name="daftar">Daftar</string>
-    <string name="title_activity_home">HomeActivity</string>
     <string name="title_home">Beranda</string>
     <string name="title_camera">Kamera</string>
     <string name="title_profile">Profil</string>
@@ -52,6 +51,21 @@
     <string name="confirm_dialog_info">Saya Mengerti</string>
     <string name="how_to_scan">Cara foto bahan masakan</string>
     <string name="ingredient_list">bahan masakan</string>
+    <string name="input_picture">input picture</string>
+    <string name="scan_menu">Scan Menu</string>
+    <string name="input_picture_from_gallery">input picture from gallery</string>
+    <string name="confirm_picture">confirm picture</string>
+    <string name="splash_screen">splash screen</string>
+    <string name="correct_image">correct image</string>
+    <string name="incorrect_image">incorrect image</string>
+    <string name="home_image">home image</string>
+    <string name="edit_profile">edit profile</string>
+    <string name="icon_language">icon language</string>
+    <string name="icon_to">icon to</string>
+    <string name="icon_logout">icon logout</string>
+    <string name="delete_ingredient">delete ingredient</string>
+    <string name="menu_name">menu name</string>
+    <string name="picture_menu">picture menu</string>
 
 
 </resources>

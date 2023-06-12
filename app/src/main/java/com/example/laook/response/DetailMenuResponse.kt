@@ -1,7 +1,6 @@
 package com.example.laook.response
 
 import android.os.Parcelable
-import com.google.gson.annotations.SerializedName
 import kotlinx.parcelize.Parcelize
 
 data class MenuResponse(
@@ -24,16 +23,6 @@ data class SuggestMenusRequest(val ingredients: List<String>)
 
 data class ScanResponse(
     val ingredients: List<String>
-)
-
-data class ErrorResponse(
-    val detail: List<ErrorDetailItem>
-)
-
-data class ErrorDetailItem(
-    val msg: String,
-    val loc: List<String>,
-    val type: String
 )
 
 

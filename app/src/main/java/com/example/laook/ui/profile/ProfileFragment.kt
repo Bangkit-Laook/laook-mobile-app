@@ -12,7 +12,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.ViewModelProvider
 import com.example.laook.ui.Authentication.LoginActivity
 import com.example.laook.R
 import com.example.laook.databinding.FragmentProfileBinding
@@ -76,8 +75,6 @@ class ProfileFragment : Fragment(), EditProfileFragment.ProfileUpdateListener{
         }
 
 
-
-
         return root
     }
 
@@ -93,6 +90,7 @@ class ProfileFragment : Fragment(), EditProfileFragment.ProfileUpdateListener{
             binding.progressBar.visibility = View.GONE
         }
     }
+
 
     override fun onDestroyView() {
         super.onDestroyView()

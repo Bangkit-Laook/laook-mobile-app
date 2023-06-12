@@ -76,14 +76,14 @@ class EmailCustomView : AppCompatEditText, View.OnTouchListener  {
                 when (event.action) {
                     MotionEvent.ACTION_DOWN -> {
                         clearButtonImage = ContextCompat.getDrawable(context,
-                            R.drawable.ic_wrong
+                            R.drawable.ic_delete
                         ) as Drawable
                         showClearButton()
                         return true
                     }
                     MotionEvent.ACTION_UP -> {
                         clearButtonImage = ContextCompat.getDrawable(context,
-                            R.drawable.ic_wrong
+                            R.drawable.ic_delete
                         ) as Drawable
                         when {
                             text != null -> text?.clear()

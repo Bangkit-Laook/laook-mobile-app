@@ -38,7 +38,7 @@ import java.text.SimpleDateFormat
 import java.util.Locale
 import android.content.Intent
 import android.view.View
-import com.example.laook.IngredientActivity
+import com.example.laook.ui.Ingredient.IngredientActivity
 
 class ScanActivity : AppCompatActivity() {
 
@@ -201,7 +201,6 @@ class ScanActivity : AppCompatActivity() {
         val dialog = builder.create()
         dialog.setCancelable(true)
 
-        val titleTextView = dialogView.findViewById<TextView>(R.id.tvTitleInfo)
         val understandButton = dialogView.findViewById<Button>(R.id.btnUnderstand)
 
 //        titleTextView.text = "Cara foto bahan masakan"
