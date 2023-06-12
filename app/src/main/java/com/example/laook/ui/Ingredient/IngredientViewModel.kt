@@ -31,5 +31,11 @@ class IngredientViewModel : ViewModel() {
         _ingredients.value = currentIngredients
     }
 
+    fun removeIngredient(ingredient: String) {
+        val currentIngredients = _ingredients.value?.toMutableList() ?: mutableListOf()
+        currentIngredients.remove(ingredient)
+        _ingredients.value = currentIngredients
+    }
+
 
 }

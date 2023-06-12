@@ -42,6 +42,12 @@ class IngredientActivity : AppCompatActivity() {
         // Panggil metode untuk menampilkan daftar bahan yang telah dipilih sebelumnya
         displaySelectedIngredients()
 
+        adapter.setOnIngredientClickListener(object : IngredientAdapter.OnIngredientClickListener {
+            override fun onIngredientClick(ingredient: String) {
+                viewModel.removeIngredient(ingredient)
+            }
+        })
+
         // Tambahkan button untuk menambahkan bahan
         binding.fabAddIngredient.setOnClickListener {
             showAddIngredientDialog()
