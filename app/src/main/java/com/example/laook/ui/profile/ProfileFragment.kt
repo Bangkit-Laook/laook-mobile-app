@@ -36,7 +36,6 @@ class ProfileFragment : Fragment(), EditProfileFragment.ProfileUpdateListener{
         val root: View = binding.root
 
         auth = FirebaseAuth.getInstance()
-
         etEmail = binding.tvEmail
         tvFullname = binding.tvFullname
 
@@ -71,12 +70,11 @@ class ProfileFragment : Fragment(), EditProfileFragment.ProfileUpdateListener{
         val tvLanguage: ConstraintLayout = binding.language
             tvLanguage.setOnClickListener {
             startActivity(Intent(Settings.ACTION_LOCALE_SETTINGS))
-
         }
-
-
         return root
     }
+
+
 
     override fun onProfileUpdated(name: String?, photoUrl: Uri?) {
         tvFullname.text = name

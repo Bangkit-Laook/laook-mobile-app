@@ -12,12 +12,10 @@ class IngredientAdapter : RecyclerView.Adapter<IngredientAdapter.IngredientViewH
     private val ingredients: MutableList<String> = mutableListOf()
     private var clickListener: OnIngredientClickListener? = null
 
-
     inner class IngredientViewHolder(itemView: View, private val clickListener: OnIngredientClickListener?) :
         RecyclerView.ViewHolder(itemView) {
         private val ingredientTextView: TextView = itemView.findViewById(R.id.tvIngredientName)
         private val deleteButton: ImageView = itemView.findViewById(R.id.btnDeleteIngredient)
-
 
         init {
             deleteButton.setOnClickListener {
@@ -28,7 +26,6 @@ class IngredientAdapter : RecyclerView.Adapter<IngredientAdapter.IngredientViewH
                 }
             }
         }
-
 
         fun bind(ingredient: String) {
             ingredientTextView.text = ingredient
@@ -52,15 +49,6 @@ class IngredientAdapter : RecyclerView.Adapter<IngredientAdapter.IngredientViewH
 
     override fun getItemCount(): Int {
         return ingredients.size
-    }
-
-
-    fun removeIngredient(ingredient: String) {
-        val position = ingredients.indexOf(ingredient)
-        if (position != -1) {
-            ingredients.removeAt(position)
-            notifyItemRemoved(position)
-        }
     }
 
     fun setIngredients(newIngredients: List<String>) {

@@ -21,9 +21,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val navView: BottomNavigationView = binding.navView
-
         val navController = findNavController(R.id.nav_host_fragment_activity_home)
-
 
         navView.setupWithNavController(navController)
 
@@ -33,13 +31,10 @@ class MainActivity : AppCompatActivity() {
 
         val toolbar: MaterialToolbar = findViewById(R.id.toolbar)
         supportActionBar?.setDisplayShowTitleEnabled(false)
-
         setSupportActionBar(toolbar)
         supportActionBar?.title = ""
         toolbar.setNavigationOnClickListener {
             onBackPressed()
         }
-
     }
-
 }

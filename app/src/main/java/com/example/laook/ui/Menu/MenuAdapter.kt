@@ -12,8 +12,6 @@ import com.example.laook.response.Menu
 
 class MenuAdapter : RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
     private val menus = mutableListOf<Menu>()
-
-
     private var listener: ((Menu) -> Unit)? = null
 
     fun setOnClickListener(listener: (Menu) -> Unit) {
@@ -48,15 +46,12 @@ class MenuAdapter : RecyclerView.Adapter<MenuAdapter.MenuViewHolder>() {
         private val nameTextView: TextView = itemView.findViewById(R.id.tv_item_name)
         private val imageView: ImageView = itemView.findViewById(R.id.iv_item_photo)
 
-
         fun bind(menu: Menu) {
             nameTextView.text = menu.name
 
             Glide.with(itemView.context)
                 .load(menu.image_url)
                 .into(imageView)
-
-
         }
     }
 }

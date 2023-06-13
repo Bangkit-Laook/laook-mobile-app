@@ -68,6 +68,12 @@
     <string name="picture_menu">picture menu</string>
     <string name="back_to_home">Kembali ke Beranda</string>
     <string name="no_data_menu">Belum ada menu masakan yang tersedia</string>
+    <string name="back">Kembali</string>
+    <string name="error_empty_fields">Bidang Kosong Tidak Diizinkan!</string>
+    <string name="ingredient_already_added">Bahan sudah ditambahkan</string>
+    <string name="image_uploaded_successfully">Gambar berhasil diunggah</string>
+    <string name="input_image_first">Silakan masukkan berkas gambar terlebih dahulu</string>
+
 
 
 </resources>

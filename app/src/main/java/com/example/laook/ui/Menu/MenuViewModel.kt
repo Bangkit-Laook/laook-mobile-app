@@ -33,7 +33,6 @@ class MenuViewModel : ViewModel() {
                 // Handle exception
             }
         }
-
         return menusLiveData
     }
 }

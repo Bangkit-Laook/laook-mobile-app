@@ -53,7 +53,6 @@ class ScanActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val btnBack: ImageView = findViewById(R.id.btnBack)
-
         btnBack.setOnClickListener {
             onBackPressed()
         }
@@ -75,7 +74,6 @@ class ScanActivity : AppCompatActivity() {
         binding.btnAccept.setOnClickListener {
             uploadImage()
         }
-
     }
 
     private val launcherIntentCamera = registerForActivityResult(
@@ -150,7 +148,7 @@ class ScanActivity : AppCompatActivity() {
             if (grantResults.isNotEmpty() && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 startTakePhoto()
             } else {
-                // tentang kebutuhan izin tersebut
+                // about permission
             }
         }
     }
@@ -166,7 +164,6 @@ class ScanActivity : AppCompatActivity() {
     private fun uriToFile(selectedImg: Uri, context: Context): File {
         val contentResolver: ContentResolver = context.contentResolver
         val myFile = createCustomTempFile(context)
-
         val inputStream = contentResolver.openInputStream(selectedImg) as InputStream
         val outputStream: OutputStream = FileOutputStream(myFile)
         val buf = ByteArray(1024)
@@ -202,7 +199,6 @@ class ScanActivity : AppCompatActivity() {
         understandButton.setOnClickListener {
             dialog.dismiss()
         }
-
         dialog.show()
     }
 
@@ -234,13 +230,9 @@ class ScanActivity : AppCompatActivity() {
                         val responseBody = response.body()
                         if (responseBody != null ) {
                             val ingredients = responseBody.ingredients
-
-
                             val intent = Intent(this@ScanActivity, IngredientActivity::class.java)
                             intent.putStringArrayListExtra("ingredients", ArrayList(ingredients))
-
                             startActivity(intent)
-
                         }
                     } else {
 //                        error output
@@ -253,7 +245,7 @@ class ScanActivity : AppCompatActivity() {
             })
 
         } else {
-            Toast.makeText(this@ScanActivity, "Silakan masukkan berkas gambar terlebih dahulu.", Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@ScanActivity, getString(R.string.input_image_first), Toast.LENGTH_SHORT).show()
         }
     }
 

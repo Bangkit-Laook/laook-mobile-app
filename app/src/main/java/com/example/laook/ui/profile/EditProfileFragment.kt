@@ -10,10 +10,12 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.fragment.app.Fragment
+import com.example.laook.R
 import com.example.laook.databinding.FragmentEditProfileBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
@@ -39,9 +41,7 @@ class EditProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         firebaseAuth = FirebaseAuth.getInstance()
-
         val user = firebaseAuth.currentUser
 
         if (user != null) {
@@ -51,22 +51,16 @@ class EditProfileFragment : Fragment() {
         }
 
         binding.etName.setText(user?.displayName)
-
         binding.ivProfile.setOnClickListener {
             showImagePickerDialog()
         }
 
-        val btnBack: ImageView = binding.btnBack
+        val btnBack: Button = binding.btnBack
         btnBack.setOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()
-
         }
 
-
-
-
         profileUpdateListener = activity as? ProfileUpdateListener
-
         binding.btnUpdate.setOnClickListener {
             val image = when {
                 ::imageUri.isInitialized -> imageUri
@@ -74,7 +68,6 @@ class EditProfileFragment : Fragment() {
             }
 
             val name = binding.etName.text.toString().trim()
-
             if (name.isEmpty()) {
                 binding.etName.error = "Name is required"
                 binding.etName.requestFocus()
@@ -93,7 +86,8 @@ class EditProfileFragment : Fragment() {
                         if (it.isSuccessful) {
                             Toast.makeText(activity, "Profile Updated", Toast.LENGTH_SHORT).show()
                             profileUpdateListener?.onProfileUpdated(name, image)
-                        } else {
+                        } else
+                        {
                             Toast.makeText(activity, "${it.exception?.message}", Toast.LENGTH_SHORT)
                                 .show()
                         }
@@ -147,7 +141,7 @@ class EditProfileFragment : Fragment() {
                             imageUri = it
                             binding.ivProfile.setImageBitmap(imgBitmap)
                             showLoading(false)
-                            Toast.makeText(activity, "Image uploaded successfully", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(activity, getString(R.string.image_uploaded_successfully), Toast.LENGTH_SHORT).show()
                         }
                     }
                         .addOnFailureListener { e ->

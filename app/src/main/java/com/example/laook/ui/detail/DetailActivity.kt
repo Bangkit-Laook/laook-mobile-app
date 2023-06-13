@@ -35,17 +35,14 @@ class DetailActivity : AppCompatActivity() {
 
         if (menu != null) {
 
-
             nameTextView.text = menu.name
 
             Glide.with(this)
                 .load(menu.image_url)
                 .into(imageView)
 
-
             val ingredients = menu.ingredients.joinToString(", ")
             ingredientsTextView.text = ingredients
-
 
             val steps = menu.steps.joinToString("\n\n")
             stepsTextView.text = steps

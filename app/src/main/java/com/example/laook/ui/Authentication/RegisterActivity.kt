@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import com.example.laook.R
 import com.example.laook.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.UserProfileChangeRequest
@@ -54,7 +55,7 @@ class RegisterActivity : AppCompatActivity() {
                 }
 
             } else {
-                Toast.makeText(this, "Empty Field Are not Allowed !", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this,  getString(R.string.error_empty_fields), Toast.LENGTH_SHORT).show()
             }
         }
     }

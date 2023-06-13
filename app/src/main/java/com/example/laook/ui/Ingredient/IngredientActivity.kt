@@ -25,15 +25,11 @@ class IngredientActivity : AppCompatActivity() {
         binding = ActivityIngredientBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        // Inisialisasi ViewModel
         viewModel = ViewModelProvider(this).get(IngredientViewModel::class.java)
-
-        // Inisialisasi RecyclerView dan adapter
         binding.rvIngredient.layoutManager = LinearLayoutManager(this)
         adapter = IngredientAdapter()
         binding.rvIngredient.adapter = adapter
 
-        // Panggil metode untuk menampilkan daftar bahan yang telah dipilih sebelumnya
         displaySelectedIngredients()
 
         adapter.setOnIngredientClickListener(object : IngredientAdapter.OnIngredientClickListener {
@@ -42,11 +38,9 @@ class IngredientActivity : AppCompatActivity() {
             }
         })
 
-        // Tambahkan button untuk menambahkan bahan
         binding.fabAddIngredient.setOnClickListener {
             showAddIngredientDialog()
         }
-
         binding.btnConfirm.setOnClickListener {
            navigateToResultActivity()
         }
@@ -54,25 +48,15 @@ class IngredientActivity : AppCompatActivity() {
         val scanIngredients = intent.getStringArrayListExtra("ingredients")
         val scanIngredientsList = scanIngredients?.toList()
 
-
         if (scanIngredientsList != null) {
             viewModel.setScanIngredients(scanIngredientsList)
         }
 
-
         val btnBack: ImageView = findViewById(R.id.btnBack)
-
         btnBack.setOnClickListener {
             onBackPressed()
         }
-
-
-
-
     }
-
-
-
 
     private fun displaySelectedIngredients() {
         viewModel.ingredients.observe(this, { ingredients ->
@@ -94,27 +78,22 @@ class IngredientActivity : AppCompatActivity() {
             val selectedIngredient = allIngredients[index]
 
             if (viewModel.ingredients.value?.contains(selectedIngredient) == true) {
-                Toast.makeText(this, "Ingredient already added", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this, getString(R.string.ingredient_already_added), Toast.LENGTH_SHORT).show()
             } else {
                 viewModel.addIngredient(selectedIngredient)
             }
-
             dialog.dismiss()
         }
         builder.create().show()
     }
-
 
     private fun navigateToResultActivity() {
         showLoading(true)
         val intent = Intent(this, MenuActivity::class.java)
         intent.putStringArrayListExtra(MenuActivity.EXTRA_INGREDIENTS, ArrayList(viewModel.ingredients.value))
         startActivity(intent)
-
         showLoading(false)
     }
-
-
 
     private fun showLoading(isLoading: Boolean) {
         if (isLoading) {

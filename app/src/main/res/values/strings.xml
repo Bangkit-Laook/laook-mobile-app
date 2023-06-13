@@ -67,5 +67,11 @@
     <string name="picture_menu">picture menu</string>
     <string name="back_to_home">Back to Home</string>
     <string name="no_data_menu">There is no menu available yet</string>
+    <string name="back">Back</string>
+    <string name="error_empty_fields">Empty Field Are not Allowed!</string>
+    <string name="ingredient_already_added">Ingredient already added</string>
+    <string name="image_uploaded_successfully">Image uploaded successfully</string>
+    <string name="input_image_first">Please insert an image file first</string>
+
 
 </resources>

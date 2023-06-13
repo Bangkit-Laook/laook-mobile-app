@@ -36,21 +36,16 @@ class MenuActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         completeIngredients = intent.getStringArrayListExtra(EXTRA_INGREDIENTS) ?: emptyList()
-
         displayMenusByIngredients()
 
         val btnBack: ImageView = findViewById(R.id.btnBack)
-
         btnBack.setOnClickListener {
-            onBackPressed() // Perform the back button action (go back)
+            onBackPressed()
         }
-
-
     }
 
     private fun displayMenusByIngredients() {
         showLoading(true)
-
         viewModel.getMenusByIngredients(completeIngredients).observe(this, { menus ->
             val filteredMenus = menus.filter { menu ->
                 completeIngredients.all { ingredient ->
@@ -71,7 +66,6 @@ class MenuActivity : AppCompatActivity() {
             }
 
             showLoading(false)
-
         })
     }
 
@@ -89,6 +83,4 @@ class MenuActivity : AppCompatActivity() {
             binding.progressBar.visibility = View.GONE
         }
     }
-
-
 }
