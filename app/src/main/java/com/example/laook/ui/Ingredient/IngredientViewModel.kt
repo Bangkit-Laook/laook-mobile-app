@@ -16,7 +16,7 @@ class IngredientViewModel : ViewModel() {
 
     fun getAllIngredients(): List<String> {
         // All ingredient
-        val allIngredients = listOf("nasi", "ayam", "telur", "daging", "bebek", "ikan", "udang","cumi","kepiting","wortel","tempe","tahu","kentang", "bawang", "jagung", "kol", "cengkeh")
+        val allIngredients = listOf("chicken", "Egg", "meat","onion", "garlic", "ginger", "tomatoes", "Shrimp","curry powder","chili powder","Squid","paprika","potatoes","oil", "Tahu")
 
         return allIngredients
     }
