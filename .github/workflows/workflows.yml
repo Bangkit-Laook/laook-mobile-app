@@ -21,6 +21,9 @@ jobs:
           distribution: "zulu"
           java-version: "11"
 
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
       - name: Lint with Kotlin
         run: ./gradlew lint
       
@@ -32,6 +35,8 @@ jobs:
 
   build:
     name: Build APK
+    needs: lint
+    if: ${{ always() && contains(join(needs.lint.result, ','), 'success') }}
     runs-on: ubuntu-latest
     timeout-minutes: 30
 
@@ -44,6 +49,9 @@ jobs:
         with:
           distribution: "zulu"
           java-version: "11"
+
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
 
       - name: Cache Gradle packages
         uses: actions/cache@v3
