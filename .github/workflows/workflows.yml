@@ -21,6 +21,9 @@ jobs:
           distribution: "zulu"
           java-version: "11"
 
+      - name: Make gradlew executable
+        run: chmod +x ./gradlew
+
       - name: Lint with Kotlin
         run: ./gradlew lint
       
