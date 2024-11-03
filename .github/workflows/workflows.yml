@@ -60,6 +60,14 @@ jobs:
           key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
           restore-keys: |
             ${{ runner.os }}-gradle-
+        
+      - name: Cache JitPack Dependencies
+        uses: actions/cache@v3
+        with:
+          path: ~/.gradle/caches/modules-2/files-2.1
+          key: ${{ runner.os }}-gradle-jitpack-${{ hashFiles('**/*.gradle*', '**/gradle-wrapper.properties') }}
+          restore-keys: |
+            ${{ runner.os }}-gradle-jitpack-
 
       - name: Build with Gradle
         run: ./gradlew assembleRelease 
