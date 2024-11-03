@@ -15,13 +15,13 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      - name: Set up Kotlin
+      - name: Set up Kotlin JDK
         uses: actions/setup-java@v3
         with:
           distribution: "zulu"
-          java-version: "11"
+          java-version: "17"
 
-      - name: Make gradlew executable
+      - name: Make Gradle Executable
         run: chmod +x ./gradlew
 
       - name: Lint with Kotlin
@@ -44,11 +44,11 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Set up JDK 11
+      - name: Set up Kotlin JDK
         uses: actions/setup-java@v3
         with:
           distribution: "zulu"
-          java-version: "11"
+          java-version: "17"
 
       - name: Make gradlew executable
         run: chmod +x ./gradlew
